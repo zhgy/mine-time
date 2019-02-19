@@ -1,21 +1,13 @@
 import React, { Fragment } from 'react';
 
-import { Header, PostList, Welcome, Footer } from '../components';
+import { PostList, Welcome } from '../components';
 
-export default class Home extends React.Component {
-
-    render() {
-        return (
-            <Fragment>
-                <Header />
-
-                <div className="main-wrapper">
-                    <Welcome />
-                    <PostList />
-                </div>
-
-                <Footer />
-            </Fragment >
-        );
-    }
-}
+export const Feed = PostList;
+export const Home = (props) => {
+    return (
+        <Fragment>
+            <Welcome />
+            <PostList />
+        </Fragment >
+    );
+};

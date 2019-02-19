@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import profile from './profile.png';
 
@@ -7,7 +8,9 @@ export class Header extends React.Component {
     render() {
         return (
             <header className="header text-center">
-                <h1 className="blog-name pt-lg-4 mb-0"><a href="index.html">[name]'s Blog</a></h1>
+                <h1 className="blog-name pt-lg-4 mb-0">
+                    <Link to='/' >[name]'s Blog</Link>
+                </h1>
 
                 <nav className="navbar navbar-expand-lg navbar-dark" >
 
@@ -19,7 +22,9 @@ export class Header extends React.Component {
                         <div className="profile-section pt-3 pt-lg-0">
                             <img className="profile-image mb-3 rounded-circle mx-auto" src={profile} alt="image" />
 
-                            <div className="bio mb-3">Hi, my name is [name]. Briefly introduce yourself here. You can also provide a link to the about page.<br /><a href="about.html">Find out more about me</a></div>
+                            <div className="bio mb-3">Hi, my name is [name]. Briefly introduce yourself here. You can also provide a link to the about page.<br />
+                                <Link to='/about'>Find out more about me</Link>
+                            </div>
                             <ul className="social-list list-inline py-3 mx-auto">
                                 <li className="list-inline-item"><a href="#"><i className="fab fa-twitter fa-fw"></i></a></li>
                                 <li className="list-inline-item"><a href="#"><i className="fab fa-linkedin-in fa-fw"></i></a></li>
@@ -32,13 +37,19 @@ export class Header extends React.Component {
 
                         <ul className="navbar-nav flex-column text-left">
                             <li className="nav-item active">
-                                <a className="nav-link" href="index.html"><i className="fas fa-home fa-fw mr-2"></i>Blog Home <span className="sr-only">(current)</span></a>
+                                <Link className='nav-link' to='/'>
+                                    <i className="fas fa-home fa-fw mr-2"></i>Blog Home <span className="sr-only">(current)</span>
+                                </Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="blog-post.html"><i className="fas fa-bookmark fa-fw mr-2"></i>Blog Post</a>
+                                <Link className='nav-link' to='/timeline'>
+                                    <i className="fas fa-bookmark fa-fw mr-2"></i>Blog Post
+                                </Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="about.html"><i className="fas fa-user fa-fw mr-2"></i>About Me</a>
+                                <Link className='nav-link' to='/about'>
+                                    <i className="fas fa-user fa-fw mr-2"></i>About Me
+                                </Link>
                             </li>
                         </ul>
 
