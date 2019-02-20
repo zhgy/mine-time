@@ -2,7 +2,8 @@ import React, { Component, Fragment } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
 
-import { Home, Feed, Post, About } from './views';
+import { Feed, Post, About } from './views';
+import Home from './views/Home';
 import { Header, Footer } from './components';
 
 class App extends Component {
