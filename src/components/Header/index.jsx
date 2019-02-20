@@ -20,17 +20,17 @@ export class Header extends React.Component {
 
                     <div id="navigation" className="collapse navbar-collapse flex-column" >
                         <div className="profile-section pt-3 pt-lg-0">
-                            <img className="profile-image mb-3 rounded-circle mx-auto" src={profile} alt="image" />
+                            <img className="profile-image mb-3 rounded-circle mx-auto" src={profile} alt="" />
 
                             <div className="bio mb-3">Hi, my name is [name]. Briefly introduce yourself here. You can also provide a link to the about page.<br />
                                 <Link to='/about'>Find out more about me</Link>
                             </div>
                             <ul className="social-list list-inline py-3 mx-auto">
-                                <li className="list-inline-item"><a href="#"><i className="fab fa-twitter fa-fw"></i></a></li>
-                                <li className="list-inline-item"><a href="#"><i className="fab fa-linkedin-in fa-fw"></i></a></li>
-                                <li className="list-inline-item"><a href="#"><i className="fab fa-github-alt fa-fw"></i></a></li>
-                                <li className="list-inline-item"><a href="#"><i className="fab fa-stack-overflow fa-fw"></i></a></li>
-                                <li className="list-inline-item"><a href="#"><i className="fab fa-codepen fa-fw"></i></a></li>
+                                <li className="list-inline-item"><a href="/"><i className="fab fa-twitter fa-fw"></i></a></li>
+                                <li className="list-inline-item"><a href="/"><i className="fab fa-linkedin-in fa-fw"></i></a></li>
+                                <li className="list-inline-item"><a href="/"><i className="fab fa-github-alt fa-fw"></i></a></li>
+                                <li className="list-inline-item"><a href="/"><i className="fab fa-stack-overflow fa-fw"></i></a></li>
+                                <li className="list-inline-item"><a href="/"><i className="fab fa-codepen fa-fw"></i></a></li>
                             </ul>
                             <hr />
                         </div>
@@ -54,7 +54,7 @@ export class Header extends React.Component {
                         </ul>
 
                         <div className="my-2 my-md-3">
-                            <a className="btn btn-primary" href="https://themes.3rdwavemedia.com/" target="_blank">Get in Touch</a>
+                            <a className="btn btn-primary" href="https://themes.3rdwavemedia.com/" target="_blank" rel="noopener noreferrer">Get in Touch</a>
                         </div>
                     </div>
                 </nav>

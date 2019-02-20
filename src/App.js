@@ -17,7 +17,7 @@ class App extends Component {
             <Route exact path='/timeline' component={Feed} />
             <Route exact path='/article/:id' component={Post} />
             <Route exact path='/about' component={About} />
-            <Route path='*' component={(props) => <h3>Not Found! 🛸</h3>} />
+            <Route path='*' component={(props) => <h3>Not Found! </h3>} />
           </Switch>
         </div>
 

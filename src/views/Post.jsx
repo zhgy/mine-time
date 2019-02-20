@@ -10,18 +10,18 @@ export class Post extends React.Component {
                     <div className="container">
                         <header className="blog-post-header">
                             <h2 className="title mb-2">Why Every Developer Should Have A Blog</h2>
-                            <div className="meta mb-3"><span className="date">Published 3 months ago</span><span className="time">5 min read</span><span className="comment"><a href="#">4 comments</a></span></div>
+                            <div className="meta mb-3"><span className="date">Published 3 months ago</span><span className="time">5 min read</span><span className="comment">4 comments</span></div>
                         </header>
 
                         <div className="blog-post-body">
                             <figure className="blog-banner">
-                                <a href="https://made4dev.com"><img className="img-fluid" src="assets/images/blog/blog-post-banner.jpg" alt="image" /></a>
-                                <figcaption className="mt-2 text-center image-caption">Image Credit: <a href="https://made4dev.com?ref=devblog" target="_blank">made4dev.com (Premium Programming T-shirts)</a></figcaption>
+                                <a href="https://made4dev.com"><img className="img-fluid" src="assets/images/blog/blog-post-banner.jpg" alt="" /></a>
+                                <figcaption className="mt-2 text-center image-caption">Image Credit: <a href="https://made4dev.com?ref=devblog" target="_blank" rel="noopener noreferrer">made4dev.com (Premium Programming T-shirts)</a></figcaption>
                             </figure>
                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. </p>
 
                             <h3 className="mt-5 mb-3">Code Block Example</h3>
-                            <p>You can get more info at <a href="https://highlightjs.org/" target="_blank">https://highlightjs.org/</a>. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. </p>
+                            <p>You can get more info at <a href="https://highlightjs.org/" target="_blank" rel="noopener noreferrer">https://highlightjs.org/</a>. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. </p>
                             <pre>
                                 <code>console.log('code')					    </code>
                             </pre>
@@ -87,7 +87,7 @@ export class Post extends React.Component {
                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </p>
 
                             <div className="embed-responsive embed-responsive-16by9">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/hnCmSXCZEpU" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                                <iframe title="youtube" width="560" height="315" src="https://www.youtube.com/embed/hnCmSXCZEpU" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                             </div>
 
                         </div>
@@ -107,7 +107,7 @@ export class Post extends React.Component {
                         <h2 className="title">Promo Section Heading</h2>
                         <p>You can use this section to promote your side projects etc. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. </p>
                         <figure className="promo-figure">
-                            <a href="https://made4dev.com" target="_blank"><img className="img-fluid" src="assets/images/promo-banner.jpg" alt="image" /></a>
+                            <a href="https://made4dev.com" target="_blank" rel="noopener noreferrer"><img className="img-fluid" src="assets/images/promo-banner.jpg" alt="" /></a>
                         </figure>
                     </div>{/*container*/}
                 </section>{/*promo-section*/}

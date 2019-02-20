@@ -19,7 +19,7 @@ export default function tagReducer(state = {}, action = {}) {
         case actionTypes.FAILED_UPDATE_TAG:
             return { ...state, loading: false, ...action }
         case actionTypes.DONE_DELETE_TAG:
-            const newTagList = state.tagList.filter(t => t.id != action.tag.id)
+            const newTagList = state.tagList.filter(t => t.id !== action.tag.id)
             return { ...state, loading: false, tagList: newTagList }
         case actionTypes.FAILED_DELETE_TAG:
             return { ...state, loading: false, ...action }
