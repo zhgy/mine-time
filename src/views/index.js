@@ -1,3 +1,5 @@
-export { Feed } from './Home';
-export { Post } from './Post';
+import Home from './Home';
+import Post from './Post';
+
+export { Home, Post };
 export { About } from './About';

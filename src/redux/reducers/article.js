@@ -39,7 +39,7 @@ export default function articleReducer(state = {}, action = {}) {
         case REQ_FIND_ARTICLE:
             return { ...state, loading: true, ...action }
         case DONE_FIND_ARTICLE:
-            return { ...state, loading: false, ...action }
+            return { ...state, loading: false, article: action.article }
         case FAILED_FIND_ARTICLE:
             return { ...state, loading: false, ...action }
         default:
