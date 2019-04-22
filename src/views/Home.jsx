@@ -22,7 +22,7 @@ class Home extends React.Component {
                 reads: meta.hits,
                 comments: 0
             },
-            intro: ''
+            intro: meta.excerpt
         }));
         return (
             <Fragment>
