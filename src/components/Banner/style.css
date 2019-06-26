@@ -1,0 +1,39 @@
+.Banner{
+    height: 470px;
+    position: relative;
+}
+.Banner::before{
+    background: url(https://static.zhihu.com/heifetz/assets/bg@2x.033e5b2d.png) repeat-x;
+    background-size: 20px 450px;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.Banner-logo{
+    background: url() 50% no-repeat;
+    background-size: 129px 179px;
+    height: 152;
+    left: 50%;
+    margin: 0 0 0 -45px;
+    overflow: hidden;
+    padding-top: 179px;
+    position: absolute;
+    top: 52px;
+    width: 129px;
+}
+
+.Banner-subTitle{
+    color: #1a1a1a;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: .5em;
+    line-height: 24px;
+    margin: 0;
+    position: absolute;
+    text-align: center;
+    top: 350px;
+    width: 100%;
+}

@@ -1,4 +1,4 @@
-export { Header } from './Header';
-export { PostList } from './PostList';
-export { Welcome } from './Welcome';
-export { Footer } from './Footer';
+
+export { Banner } from './Banner';
+export { CardContainer } from './CardContainer';
+export { StartBar } from './StartBar';
