@@ -6,7 +6,7 @@ import './style.css';
 const ArticleItem = props => {
     return (
         <li className="ArticleItem">
-            <a className="ArticleItem-title" href="/" target="_blank">
+            <a className="ArticleItem-title" href="/article/0" target="_blank">
                 <h3>Thinking in React</h3>
             </a>
             <div className="AuthorInfo">
@@ -16,7 +16,7 @@ const ArticleItem = props => {
                     </a>
                 </span>
                 <span className="AuthorInfo-name">
-                    <a target="_blank" href="/">Reactjs</a>
+                    <a target="_blank" href="/profile/0">Reactjs</a>
                 </span>
                 <span className="AuthorInfo-date">
                     <time dateTime="1559750400000">06 June 2019</time>
