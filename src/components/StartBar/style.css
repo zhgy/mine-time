@@ -3,7 +3,8 @@
     display: flex;
     justify-content: center;
     margin: 0 3px 32px;
-    width: 100%;
+    width: 98%;
+    padding: 0px 10px;
 }
 
 .StartBar-text{
@@ -17,7 +18,12 @@
 
 .StartBar-line{
     background: #d3d3d3;
-    display: none;
     flex-grow: 1;
     height: 1px;
+}
+
+@media (max-width:800px){
+    .StartBar-line{
+        display: none;
+    }
 }

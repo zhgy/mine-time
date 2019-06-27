@@ -15,7 +15,7 @@ export class Home extends React.Component {
                 <div className="Home">
                     <StartBar text={"分类 · 推荐"} />
                     <CardContainer card={ColumnCard} items={columns} />
-                    <StartBar text={"分类 · 推荐"} />
+                    <StartBar text={"文章 · 最新"} />
                     <CardContainer card={PostCard} items={posts} />
                 </div>
             </Fragment >
