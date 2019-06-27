@@ -1,48 +1,30 @@
 .CardContainer{
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
 
 .ColumnCard{
     margin: 0 8px 16px;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
+    text-decoration: none;
     align-items: center;
     background: #fff;
     border-radius: 4px;
-    -webkit-box-shadow: 0 8px 18px rgba(0,0,0,.06);
     box-shadow: 0 8px 18px rgba(0,0,0,.06);
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
     padding: 26px 0 23px;
-    width: 206px;
+    width: 244px;
 }
 
 .ColumnCard-info{
-    -webkit-box-align: center;
-    -ms-flex-align: center;
+    color: black;
     align-items: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
     flex-grow: 1;
     padding: 0 16px;
+    margin-top: 8px;
 }
 
 .ColumnCard-meta{
@@ -55,4 +37,91 @@
     background: #fff;
     border-radius: 2px;
     border-radius: 50%;
+}
+
+.PostCard{
+    margin: 0 8px 16px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 8px 18px rgba(0,0,0,.06);
+    box-sizing: border-box;
+    width: 244px;
+}
+
+.PostCard-img figure{
+    margin: 0px;
+    min-height: 172px;
+    max-height: 210px;
+    margin-bottom: 0px;
+    overflow: hidden;
+    width: 244px;
+}
+
+.PostCard-img figure img{
+    margin: 0px;
+    min-height: 172px;
+    max-height: 172px;
+    width: 244px;
+    vertical-align: middle;
+    border-style: none;
+}
+
+.PostCard-content{
+    padding: 16px 20px 20px;
+}
+
+.PostCard-date-category-wrapper{
+    line-height: 26px;
+    margin: 0;
+}
+
+.PostCard-date{
+    color: #444;
+    display: inline-block;
+    font-size: 10px;
+    margin-right: 5px;
+    text-transform: uppercase;
+}
+
+.PostCard-category a{
+    font-size: 14px;
+    font-weight: normal;
+    color: #39BDB1;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.PostCard-title a{
+    overflow: hidden;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: "Open Sans";
+    font-weight: 600;
+    color: black;
+    display: block;
+    font-size: 14px;
+    line-height: 0px;
+    margin: 5px 0;
+    position: relative;
+}
+
+.PostCard-author a{
+    color: #444;
+    text-decoration: none;
+    display: inline;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 22px;
+}
+.PostCard-author span{
+    font-size: 10px;
+    font-weight: 400;
+    padding-right: 5px;
+}
+
+.PostCard p{
+    font-size: 12px;
+    line-height: 22px;
+    margin-bottom: 0;
 }

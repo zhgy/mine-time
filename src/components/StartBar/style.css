@@ -1,12 +1,6 @@
 .StartBar{
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
     margin: 0 3px 32px;
     width: 100%;
@@ -24,8 +18,6 @@
 .StartBar-line{
     background: #d3d3d3;
     display: none;
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
     flex-grow: 1;
     height: 1px;
 }
