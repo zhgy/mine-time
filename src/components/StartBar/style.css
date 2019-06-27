@@ -4,6 +4,7 @@
     justify-content: center;
     margin: 0 3px 32px;
     width: 98%;
+    height: 24px;
     padding: 0px 10px;
 }
 
@@ -13,7 +14,6 @@
     line-height: 22px;
     margin: 0 16px;
     font-weight: 600;
-    font-synthesis: style;
 }
 
 .StartBar-line{
