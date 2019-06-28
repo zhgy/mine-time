@@ -8,8 +8,9 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { configureStore } from './redux/configureStore'
 
-
-const store = configureStore({});
+const initState = process.env.NODE_ENV === 'development' ?
+    require('./redux/mockdata').default : {};
+const store = configureStore(initState);
 
 ReactDOM.render(
     (<Provider store={store}>

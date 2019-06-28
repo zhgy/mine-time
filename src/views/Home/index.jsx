@@ -1,14 +1,20 @@
 import React, { Fragment } from 'react';
+import { connect } from 'react-redux';
 
 import { Banner, StartBar, CardContainer } from '../../components';
 import { ColumnCard, PostCard } from '../../components/CardContainer';
 import './style.css';
 
 
-export class Home extends React.Component {
+class HomePage extends React.Component {
+
+    componentDidMount() {
+        const { onLoad } = this.props;
+        onLoad();
+    }
+
     render() {
-        const columns = [0, 1, 2, 3, 4, 5];
-        const posts = [0, 1, 2, 3, 4, 5];
+        const { columns = [], posts = [] } = this.props;
         return (
             <Fragment>
                 <Banner />
@@ -22,3 +28,21 @@ export class Home extends React.Component {
         );
     }
 };
+
+const mapStateToProps = (state, ownProps) => {
+    return {
+        columns: state.category.recommend,
+        posts: state.article.latest
+    };
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        onLoad: () => {
+            dispatch({ type: 'FETCH_Recommend_Category' });
+            dispatch({ type: 'FETCH_Latest_Article' });
+        }
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

@@ -1,13 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { StartBar } from '../StartBar';
 import './style.css';
 
 const ArticleItem = props => {
+    const { id, title, createdOn, excerpt, author, category } = props.article;
     return (
         <li className="ArticleItem">
-            <a className="ArticleItem-title" href="/article/0" target="_blank">
-                <h3>Thinking in React</h3>
+            <a className="ArticleItem-title" href={`/article/${id}`} target="_blank">
+                <h3>{title}</h3>
             </a>
             <div className="AuthorInfo">
                 <span className="AuthorInfo-avatar">
@@ -16,10 +18,10 @@ const ArticleItem = props => {
                     </a>
                 </span>
                 <span className="AuthorInfo-name">
-                    <a target="_blank" href="/profile/0">Reactjs</a>
+                    <a target="_blank" href={`/profile/${author.id}`}>{author.name}</a>
                 </span>
                 <span className="AuthorInfo-date">
-                    <time dateTime="1559750400000">06 June 2019</time>
+                    <time dateTime={createdOn}>{new Date(createdOn).toLocaleDateString()}</time>
                 </span>
             </div>
             <div className="ArticleItem-excerpt">
@@ -27,7 +29,7 @@ const ArticleItem = props => {
                     <img src="" alt="cover" />
                 </div>
                 <p className="ArticleItem-inner">
-                    One of the many great parts of React is how it makes you think about apps as you build them. In this document, we’ll walk you through the thought process of building a searchable product data table using React.
+                    {excerpt}
                     <small className="ArticleItem-Excerpt-more">More</small>
                 </p>
             </div>
@@ -42,15 +44,15 @@ const ArticleItem = props => {
 export class ArticleList extends React.Component {
 
     render() {
+        const { items = [], navButtons = [] } = this.props;
+
         return (
             <section className="ArticleList">
                 <nav className="ArticleList-nav">
-                    <a href="/">Remo</a>
-                    <a href="/">Latest</a>
-                    <a href="/">Hot</a>
+                    {navButtons.map((value, index) => <Link to={value.to}>{value.title}</Link>)}
                 </nav>
                 <ul className="ArticleList-items">
-                    {[0, 1, 2, 3, 4, 5].map((value, index) => <ArticleItem key={index} />)}
+                    {items.map((value, index) => <ArticleItem key={index} article={value} />)}
 
                 </ul>
             </section >
