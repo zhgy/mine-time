@@ -3,7 +3,7 @@
     position: relative;
 }
 .Banner::before{
-    background: url(https://static.zhihu.com/heifetz/assets/bg@2x.033e5b2d.png) repeat-x;
+    background: url(/static/img/default-banner-bg.png) repeat-x;
     background-size: 20px 450px;
     content: "";
     height: 100%;

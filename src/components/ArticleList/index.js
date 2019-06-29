@@ -1,24 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { StartBar } from '../StartBar';
 import './style.css';
 
 const ArticleItem = props => {
-    const { id, title, createdOn, excerpt, author, category } = props.article;
+    const { id, title, createdOn, excerpt, author } = props.article;
     return (
         <li className="ArticleItem">
-            <a className="ArticleItem-title" href={`/article/${id}`} target="_blank">
+            <a className="ArticleItem-title" href={`/article/${id}`} target="_blank" rel="noopener noreferrer">
                 <h3>{title}</h3>
             </a>
             <div className="AuthorInfo">
                 <span className="AuthorInfo-avatar">
-                    <a target="_blank" href="/">
+                    <a target="_blank" href="/" rel="noopener noreferrer">
                         <img width="24" height="24" src="" alt="" />
                     </a>
                 </span>
                 <span className="AuthorInfo-name">
-                    <a target="_blank" href={`/profile/${author.id}`}>{author.name}</a>
+                    <a target="_blank" href={`/profile/${author.id}`} rel="noopener noreferrer">{author.name}</a>
                 </span>
                 <span className="AuthorInfo-date">
                     <time dateTime={createdOn}>{new Date(createdOn).toLocaleDateString()}</time>
