@@ -4,18 +4,48 @@ import { connect } from 'react-redux';
 import { RichText } from '../../components';
 import './style.css';
 
+const ArticleHeader = props => {
+    return (
+        <div className="ArticleHeader container">
+            <span className="ArticleHeader-date">
+                <time dateTime="1558382520000">2019年5月21日</time>
+            </span>
+            
+            <span className="ArticleHeader-category">
+                <a href="/category/0" className="">NEWS</a>
+            </span>
+
+            <div className="ArticleHeader-title">
+                <h1 className="">Thinking in react</h1>
+            </div>
+            
+            <div className="ArticleHeader-author">
+                <span className="">Author</span>
+                <span className="">
+                    <a href="/profile/0" className="">Reactjs</a>
+                </span>
+            </div>
+
+        </div>
+    );
+}
 
 class Article extends React.Component {
     render() {
         return (
-            <React.Fragment>
-                <h3>Thinking in React</h3>
-                <p>{JSON.stringify(this.props)}</p>
-                <RichText />
-            </React.Fragment >
+            <div className="Article">
+                <div className="Article-header">
+                    <ArticleHeader />
+                </div>
+                <div className="Article-body container" >
+                    <div className="Article-content"><RichText /></div>
+                    <div className="Article-sidebar">Sidebar</div>
+                </div>
+            </div>
         );
     }
 };
+
 
 const mapStateToProps = (state, ownProps) => {
     const { id } = ownProps.match.params;

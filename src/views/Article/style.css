@@ -1,0 +1,71 @@
+.ArticleHeader-date{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.ArticleHeader-category{
+    font-size: 16px;
+    font-weight: normal;
+    color: #444;
+    
+}
+.ArticleHeader-category>a{
+    border-radius: 3px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 15px;
+    padding: 2px 6px;
+    position: relative;
+    text-transform: uppercase;
+    z-index: 2 !important;
+}
+
+.ArticleHeader-title h1{
+    color: white;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 42px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.ArticleHeader-author{
+    color: #444;
+    display: block;
+    font-size: 12px;
+    line-height: 16px;
+    margin-bottom: 20px;
+    min-height: 20px;
+}
+
+.Article-header{
+    height: 120px;
+    width: 100%;
+    border-top: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+    margin-top: -1px;
+    padding: 59px 0 53px;
+    position: relative;
+    background: rgba(0, 85, 113, 0.5);
+}
+
+.Article-body{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.Article-content{
+    width: 70%;
+    border: 1px solid grey;
+    padding: 8px;
+}
+
+.Article-sidebar{
+    border: 1px solid grey;
+    width: 30%;
+    padding: 8px;
+}
