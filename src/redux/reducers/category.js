@@ -19,6 +19,10 @@ export default function categoryReducer(state = {}, action = {}) {
         case actionTypes.DONE_UPDATE_CATEGORY:
             state.categoryList.filter(cat => cat.id !== action.category.id).push(action.category)
             return { ...state, loading: false }
+        case actionTypes.DONE_RECOMMEND_CATEGORY:
+            state.recommend = action.payload
+            return { ...state }
+
         default:
             return state;
     }

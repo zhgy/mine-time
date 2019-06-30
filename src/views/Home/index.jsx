@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { Banner, StartBar, CardContainer } from '../../components';
 import { ColumnCard, PostCard } from '../../components/CardContainer';
+import { fetchRecommendCategory } from '../../redux/actions/category';
 import './style.css';
 
 
@@ -39,8 +40,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         onLoad: () => {
-            dispatch({ type: 'FETCH_Recommend_Category' });
-            dispatch({ type: 'FETCH_Latest_Article' });
+            dispatch(fetchRecommendCategory());
+            console.log('fetchRecommendCategory');
         }
     };
 }

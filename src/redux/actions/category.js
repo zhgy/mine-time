@@ -2,16 +2,12 @@ import actionTypes from '../actions'
 
 
 // fetchCategoryList
-export function requestCategoryList(pid) { return { type: actionTypes.REQUEST_CATEGORY_LIST, pid } }
-
-export function reciveCategoryList(payload) { return { type: actionTypes.RECIVE_CATEGORY_LIST, payload } }
-
 export function fetchCategoryList(pid = 0) {
     return (dispatch, getState) => {
-        dispatch(requestCategoryList(pid));
+        dispatch({ type: actionTypes.REQUEST_CATEGORY_LIST, pid });
         fetch(`/api/category/${pid}/children`)
             .then(res => res.json(), err => console.log(err))
-            .then(json => dispatch(reciveCategoryList(json)));
+            .then(json => dispatch({ type: actionTypes.RECIVE_CATEGORY_LIST, payload: json }));
     }
 }
 
@@ -102,5 +98,15 @@ export function updateCategory(category) {
                     dispatch(failedUpdateCategory(category))
                 }
             })
+    }
+}
+
+// fetchRecommendCategory
+export function fetchRecommendCategory() {
+    return (dispatch, getState) => {
+        dispatch({ type: actionTypes.REQUEST_RECOMMEND_CATEGORY });
+        fetch(`/api/category/recommend`)
+            .then(res => res.json(), err => console.log(err))
+            .then(json => dispatch({ type: actionTypes.DONE_RECOMMEND_CATEGORY, payload: json }));
     }
 }
