@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { RichText } from '../../components';
-import { Cat } from '../../components/button';
+import { Cat, Author } from '../../components/button';
 import './style.css';
 
 const ArticleHeader = props => {
@@ -19,10 +19,8 @@ const ArticleHeader = props => {
             </div>
 
             <div className="ArticleHeader-author">
-                <span className="">Author</span>
-                <span className="">
-                    <a href="/profile/0" className="">Reactjs</a>
-                </span>
+                <span className="">Author&nbsp;</span>
+                <Author id={0} name={'Reactjs'} />
             </div>
 
         </div>

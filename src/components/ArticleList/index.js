@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './style.css';
+import { Author } from '../button';
 
 const ArticleItem = props => {
     const { id, title, createdOn, excerpt, author } = props.article;
@@ -16,9 +17,7 @@ const ArticleItem = props => {
                         <img width="24" height="24" src="" alt="" />
                     </a>
                 </span>
-                <span className="AuthorInfo-name">
-                    <a target="_blank" href={`/profile/${author.id}`} rel="noopener noreferrer">{author.name}</a>
-                </span>
+                <Author {...author} />
                 <span className="AuthorInfo-date">
                     <time dateTime={createdOn}>{new Date(createdOn).toLocaleDateString()}</time>
                 </span>

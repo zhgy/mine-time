@@ -97,20 +97,6 @@
     position: relative;
 }
 
-.PostCard-author a{
-    color: #444;
-    text-decoration: none;
-    display: inline;
-    font-size: 10px;
-    font-weight: 600;
-    line-height: 22px;
-}
-.PostCard-author span{
-    font-size: 10px;
-    font-weight: 400;
-    padding-right: 5px;
-}
-
 .PostCard p{
     font-size: 12px;
     line-height: 22px;

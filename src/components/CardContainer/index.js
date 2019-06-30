@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-import { Cat } from '../button';
+import { Cat, Author } from '../button';
 
 const ColumnCard = (props) => {
     const { id, title, cover, articleCount } = props;
@@ -46,10 +46,8 @@ const PostCard = props => {
                 </div>
                 <div className="PostCard-author">
                     <div>
-                        <span>By</span>
-                        <span>
-                            <a href={`/profile/${author.id}`}>{author.name}</a>
-                        </span>
+                        <span>By&nbsp;</span>
+                        <Author {...author} />
                     </div>
                 </div>
                 <p>{excerpt}</p>
