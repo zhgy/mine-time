@@ -1,6 +1,8 @@
 import React from 'react';
 import './style.css';
 
+import { Cat } from '../button';
+
 const ColumnCard = (props) => {
     const { id, title, cover, articleCount } = props;
     return (
@@ -33,9 +35,7 @@ const PostCard = props => {
                     <span className="PostCard-date">
                         <time dateTime={createdOn}>{new Date(createdOn).toLocaleDateString()}</time>
                     </span>
-                    <span className="PostCard-category">
-                        <a href={`/category/${category.id}`} >{category.title}</a>
-                    </span>
+                    <Cat {...category} />
                 </div>
                 <div className="PostCard-title">
                     <span>

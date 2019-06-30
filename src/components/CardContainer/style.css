@@ -83,15 +83,6 @@
     text-transform: uppercase;
 }
 
-.PostCard-category a{
-    font-size: 14px;
-    font-weight: normal;
-    color: #39BDB1;
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
 .PostCard-title a{
     overflow: hidden;
     text-decoration: none;

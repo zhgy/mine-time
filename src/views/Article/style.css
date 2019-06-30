@@ -5,24 +5,6 @@
     text-transform: uppercase;
 }
 
-.ArticleHeader-category{
-    font-size: 16px;
-    font-weight: normal;
-    color: #444;
-    
-}
-.ArticleHeader-category>a{
-    border-radius: 3px;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    margin: 0 15px;
-    padding: 2px 6px;
-    position: relative;
-    text-transform: uppercase;
-    z-index: 2 !important;
-}
-
 .ArticleHeader-title h1{
     color: white;
     font-size: 36px;

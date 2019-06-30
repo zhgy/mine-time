@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { RichText } from '../../components';
+import { Cat } from '../../components/button';
 import './style.css';
 
 const ArticleHeader = props => {
@@ -10,15 +11,13 @@ const ArticleHeader = props => {
             <span className="ArticleHeader-date">
                 <time dateTime="1558382520000">2019年5月21日</time>
             </span>
-            
-            <span className="ArticleHeader-category">
-                <a href="/category/0" className="">NEWS</a>
-            </span>
+
+            <Cat id={0} title={'news'} color={'white'} />
 
             <div className="ArticleHeader-title">
                 <h1 className="">Thinking in react</h1>
             </div>
-            
+
             <div className="ArticleHeader-author">
                 <span className="">Author</span>
                 <span className="">
