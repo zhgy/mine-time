@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
 
 import { Cat, Author } from '../button';
@@ -6,7 +7,7 @@ import { Cat, Author } from '../button';
 const ColumnCard = (props) => {
     const { id, title, cover, articleCount } = props;
     return (
-        <a className="ColumnCard" href={`/category/${id}`}>
+        <Link className="ColumnCard" to={`/category/${id}`}>
             <div>
                 <img alt="" src={cover || '/static/img/default-avatar-56x56.png'} />
             </div>
@@ -15,7 +16,7 @@ const ColumnCard = (props) => {
                 <div className=""></div>
             </div>
             <div className="ColumnCard-meta">12,45 人关注 | {articleCount} 篇文章</div>
-        </a>
+        </Link>
     );
 }
 
@@ -57,7 +58,7 @@ const PostCard = props => {
 }
 
 const CardContainer = props => {
-    const { card, items } = props;
+    const { card, items = [] } = props;
     const Card = card;
     return (
         <div className="CardContainer">

@@ -47,7 +47,7 @@ export class ArticleList extends React.Component {
         return (
             <section className="ArticleList">
                 <nav className="ArticleList-nav">
-                    {navButtons.map((value, index) => <Link to={value.to}>{value.title}</Link>)}
+                    {navButtons.map((value, index) => <Link key={index} to={value.to}>{value.title}</Link>)}
                 </nav>
                 <ul className="ArticleList-items">
                     {items.map((value, index) => <ArticleItem key={index} article={value} />)}
