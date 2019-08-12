@@ -3,15 +3,15 @@ import { connect } from 'react-redux';
 
 import { Banner, StartBar, CardContainer } from '../../components';
 import { ColumnCard, PostCard } from '../../components/CardContainer';
-import { fetchRecommendCategory } from '../../redux/actions/category';
+import { categoryActions } from '../../store/category';
 import './style.css';
+import { bindActionCreators } from 'redux';
 
 
 class HomePage extends React.Component {
 
     componentDidMount() {
-        const { onLoad } = this.props;
-        onLoad();
+        this.props.fetchRecommendCategory();
     }
 
     render() {
@@ -30,20 +30,8 @@ class HomePage extends React.Component {
     }
 };
 
-const mapStateToProps = (state, ownProps) => {
-    return {
-        columns: state.category.recommend,
-        posts: state.article.latest
-    };
-}
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-        onLoad: () => {
-            dispatch(fetchRecommendCategory());
-            console.log('fetchRecommendCategory');
-        }
-    };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
+export default connect(
+    state => ({ columns: state.category.recommend, posts: state.article.latest }),
+    dispatch => bindActionCreators(categoryActions, dispatch)
+)(HomePage);

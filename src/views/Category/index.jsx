@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import { ArticleList, Banner } from '../../components';
 import './style.css';
+import { categoryActions } from '../../store/category';
+import { bindActionCreators } from 'redux';
 
 
 class Category extends React.Component {
@@ -25,19 +27,8 @@ class Category extends React.Component {
     }
 };
 
-const mapStateToProps = (state, ownProps) => {
-    return {
-        categoryArticles: state.article.cats
-    };
-}
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-        onLoad: () => {
-            dispatch({ type: 'FETCH_Recommend_Category' });
-            dispatch({ type: 'FETCH_Latest_Article' });
-        }
-    };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Category);
+export default connect(
+    state => ({ categoryArticles: state.article.cats }),
+    dispatch => bindActionCreators(categoryActions, dispatch)
+)(Category);

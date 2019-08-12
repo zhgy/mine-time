@@ -6,10 +6,10 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { configureStore } from './redux/configureStore'
+import { configureStore } from './store/configureStore'
 
 const initState = process.env.NODE_ENV === 'development' ?
-    require('./redux/mockdata').default : {};
+    require('./store/mockdata').default : {};
 const store = configureStore(initState);
 
 ReactDOM.render(
