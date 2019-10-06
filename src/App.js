@@ -5,7 +5,8 @@ import {
   Article,
   Category,
   Home,
-  Profile
+  Profile,
+  Gallery
 } from './views';
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
           <Route exact path='/category/:id/:type?' component={Category} />
           <Route exact path='/article/:id' component={Article} />
           <Route exact path='/profile/:id' component={Profile} />
+          <Route exact path='/gallery' component={Gallery} />
           <Route path='*' component={(props) => <h3>Not Found! </h3>} />
         </Switch>
       </Fragment >
