@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { RichText } from '../../components';
-import { Cat, Author } from '../../components/button';
+import { Cat, Author } from '../../components/Button';
 import './style.css';
 
 const ArticleHeader = props => {

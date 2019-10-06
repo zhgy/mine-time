@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './style.css';
-import { Author } from '../button';
+import { Author } from '../Button';
 
 const ArticleItem = props => {
     const { id, title, createdOn, excerpt, author } = props.article;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './button.css';
+import './style.css';
 
 export const Cat = props => {
     const { id, title, color = '#39BDB1' } = props;
@@ -27,3 +27,8 @@ export const Author = props => {
         </span>
     );
 }
+
+export const Button = ({ title, link }) =>
+    <span className='tl-button'>
+        <Link title={title} to={link} >{title}</Link>
+    </span>

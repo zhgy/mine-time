@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.css';
 
-import { Cat, Author } from '../button';
+import { Cat, Author } from '../Button';
 
 const ColumnCard = (props) => {
     const { id, title, cover, articleCount } = props;
