@@ -8,8 +8,7 @@ import { categoryActions } from '../../store/category';
 
 const Category = ({ match }) => {
     const { id, type = 'recommend' } = match.params;
-    const categoryArticles = useSelector(state => state.article.cats);
-    const articles = categoryArticles.get(id - 0);
+    const articles = useSelector(state => state.article.cats.get(id - 0));
     const basePath = `/category/${id}`
     const buttons = [
         { to: `${basePath}/recommend`, title: '推荐' },
@@ -23,7 +22,7 @@ const Category = ({ match }) => {
     }, [dispatch])
     return (<React.Fragment>
         <Banner />
-        <ArticleList navButtons={buttons} items={articles[type]} />
+        <ArticleList navButtons={buttons} items={articles ? articles[type] : []} />
     </React.Fragment >)
 }
 

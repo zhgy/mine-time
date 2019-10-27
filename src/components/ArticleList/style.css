@@ -13,11 +13,9 @@
     justify-content: left;
 }
 
-.ArticleList-nav>a{
-    font-size: 20px;
-    line-height: 24px;
-    text-decoration: none;
-    color: black;
+.tl-btn-nav a{
+    font-size: 20px !important;
+    color: black !important;
     padding-top: 10px;
     padding-left: 6px;
     padding-right: 6px;

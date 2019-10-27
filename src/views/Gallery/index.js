@@ -10,7 +10,7 @@ const Gallery = props => {
         avatar: 'https://i.scdn.co/image/f87792caa6da101c22961f85effbb748a23ad3a1',
         action: {
             title: 'Play Now',
-            link: '/'
+            href: '/'
         }
     }
     return (
@@ -21,7 +21,7 @@ const Gallery = props => {
             </div>
 
             <div>
-                <Button title={'Button'} link={'/'} />
+                <Button title={'Button'} href={'/'} />
             </div>
         </React.Fragment>
     )

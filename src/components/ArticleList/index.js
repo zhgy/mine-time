@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './style.css';
-import { Author } from '../Button';
+import { Author, Button } from '../Button';
 
 const ArticleItem = ({ article: { id, title, createdOn, excerpt, author } }) => {
     return (<li className="ArticleItem">
@@ -39,7 +39,7 @@ const ArticleItem = ({ article: { id, title, createdOn, excerpt, author } }) => 
 export const ArticleList = ({ items = [], navButtons = [] }) =>
     (<section className="ArticleList">
         <nav className="ArticleList-nav">
-            {navButtons.map((value, index) => <Link key={index} to={value.to}>{value.title}</Link>)}
+            {navButtons.map((value, index) => <Button key={index} className='tl-btn-nav' href={value.to}>{value.title}</Button>)}
         </nav>
         <ul className="ArticleList-items">
             {items.map((value, index) => <ArticleItem key={index} article={value} />)}
