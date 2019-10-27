@@ -2,9 +2,9 @@ import React from 'react';
 
 import './style.css';
 
-const StartBar = (props) =>
+const StartBar = ({ text }) =>
     (<h3 className="StartBar">
-        {props.text ? <div className="StartBar-text">{props.text}</div> : null}
+        {text ? <div className="StartBar-text">{text}</div> : null}
         <div className="StartBar-line"></div>
     </h3>)
 
