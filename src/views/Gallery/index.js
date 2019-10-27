@@ -1,6 +1,10 @@
-import React from 'react'
-import { ProfileCard } from '../../components'
-import { Button } from '../../components/Button'
+import React from 'react';
+import {
+    Button,
+    ProfileCard,
+    Label
+} from '../../components';
+
 
 
 const Gallery = props => {
@@ -22,6 +26,11 @@ const Gallery = props => {
 
             <div>
                 <Button title={'Button'} href={'/'} />
+            </div>
+            <div>
+                <Label>Label#1</Label>
+                <Label style={{color:'black'}}>Label#1</Label>
+                <Label><Button title={'Button'} href={'/'} /></Label>
             </div>
         </React.Fragment>
     )

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { ArticleList, Banner } from '../../components';
+import { ArticleList, Banner, ProfileCard } from '../../components';
 import './style.css';
 import { categoryActions } from '../../store/category';
 
@@ -21,7 +21,9 @@ const Category = ({ match }) => {
         dispatch(categoryActions.fetchRecommendCategory())
     }, [dispatch])
     return (<React.Fragment>
-        <Banner />
+        <div className='Category-info'>
+            <ProfileCard tag='Category' name='Programming' description='React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.' />
+        </div>
         <ArticleList navButtons={buttons} items={articles ? articles[type] : []} />
     </React.Fragment >)
 }

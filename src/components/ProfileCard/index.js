@@ -1,20 +1,21 @@
 import React from 'react'
 import './style.css'
-import { Button } from '../Button'
+import { Button, Label } from '../'
 
 
 /* Copied from https://www.spotify.com/ */
-const ProfileCard = ({ tag, name, avatar, action }) =>
+const ProfileCard = ({ tag, name, description, avatar, action }) =>
     (<div className='ProfileCard-container'>
         <div id="profile-artist" className=''>
             <figure className='item-art'>
                 <img className='media-object' src={avatar} alt={name} />
             </figure>
             <figcaption className='item-details'>
-                <small className=''>{tag}</small>
-                <h3 className=''>{name}</h3>
+                <Label className='item-details-tag'>{tag}</Label>
+                <Label className='item-details-name'>{name}</Label>
                 <div style={{ padding: '10px 42px' }}>
                     {action ? <Button {...action} /> : null}
+                    {description ? <p className='item-details-desc'>{description}</p> : null}
                 </div>
             </figcaption>
             <div className='item-bg'></div>
