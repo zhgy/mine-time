@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.css';
 
-import { Cat, Author } from '../Button';
+import { Category, Author } from '../Button';
 
 const ColumnCard = ({ id, title, cover, articleCount }) =>
     (<Link className="ColumnCard" to={`/category/${id}`}>
@@ -30,7 +30,7 @@ const PostCard = ({ id, createdOn, category, title, author, excerpt, cover }) =>
                 <span className="PostCard-date">
                     <time dateTime={createdOn}>{new Date(createdOn).toLocaleDateString()}</time>
                 </span>
-                <Cat {...category} />
+                <Category {...category} />
             </div>
             <div className="PostCard-title">
                 <span>

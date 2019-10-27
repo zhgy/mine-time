@@ -20,7 +20,7 @@ const Category = ({ match }) => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(categoryActions.fetchRecommendCategory())
-    }, [])
+    }, [dispatch])
     return (<React.Fragment>
         <Banner />
         <ArticleList navButtons={buttons} items={articles[type]} />

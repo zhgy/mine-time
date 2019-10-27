@@ -3,24 +3,19 @@ import { Link } from 'react-router-dom';
 
 import './style.css';
 
-export const Cat = ({ id, title, color = '#39BDB1' }) =>
-    (<span className='Cat'>
-        <Link
-            to={`/category/${id}`}
-            style={{ color: color }}>
-            {title}
-        </Link>
+
+export const BasicButton = ({ title, href, onClick, ...rest }) =>
+    onClick ?
+        <a title={title} href={href} {...rest} onClick={e => { onClick(e); e.preventDefault(); }} >{title}</a> :
+        <Link title={title} to={href} {...rest}>{title}</Link>
+
+export const Button = ({ className = '', ...rest }) =>
+    (<span className={`tl-btn ${className}`}>
+        <BasicButton {...rest} />
     </span>)
 
-export const Author = ({ id, name }) =>
-    (<span className='Author'>
-        <Link
-            to={`/profile/${id}`}>
-            {name}
-        </Link>
-    </span>)
+export const Author = ({ id, name, ...rest }) =>
+    (<Button className='tl-btn-author' title={name} href={`/profile/${id}`} {...rest} />)
 
-export const Button = ({ title, link }) =>
-    (<span className='tl-button'>
-        <Link title={title} to={link} >{title}</Link>
-    </span>)
+export const Category = ({ id, name, ...rest }) =>
+    (<Button className='tl-btn-category' title={name} href={`/category/${id}`} {...rest} />)

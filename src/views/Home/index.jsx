@@ -14,7 +14,7 @@ const HomePage = () => {
 
     useEffect(() => {
         dispatch(categoryActions.fetchRecommendCategory())
-    }, [])
+    }, [dispatch])
 
     return (<Fragment>
         <Banner />
