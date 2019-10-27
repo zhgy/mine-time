@@ -1,17 +1,21 @@
 import React, { Fragment, useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Banner, StartBar, CardContainer } from '../../components';
 import { ColumnCard, PostCard } from '../../components/CardContainer';
 import { categoryActions } from '../../store/category';
 import './style.css';
-import { bindActionCreators } from 'redux';
 
 
-const HomePage = ({ columns = [], posts = [], fetchRecommendCategory }) => {
+const HomePage = () => {
+    const dispatch = useDispatch()
+    const columns = useSelector(state => state.category.recommend)
+    const posts = useSelector(state => state.article.latest)
+
     useEffect(() => {
-        fetchRecommendCategory()
+        dispatch(categoryActions.fetchRecommendCategory())
     }, [])
+
     return (<Fragment>
         <Banner />
         <div className="Home">
@@ -23,8 +27,4 @@ const HomePage = ({ columns = [], posts = [], fetchRecommendCategory }) => {
     </Fragment >)
 }
 
-
-export default connect(
-    state => ({ columns: state.category.recommend, posts: state.article.latest }),
-    dispatch => bindActionCreators(categoryActions, dispatch)
-)(HomePage);
+export default HomePage

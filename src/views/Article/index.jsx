@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { RichText } from '../../components';
 import { Cat, Author } from '../../components/Button';
@@ -24,8 +24,10 @@ const ArticleHeader = props =>
 
     </div>)
 
-const Article = () =>
-    (<div className="Article">
+const Article = (props) => {
+    const { id } = props.match.params;
+    const article = useSelector(state => state.article.items.filter(e => e.id === id))
+    return (<div className="Article">
         <div className="Article-header">
             <ArticleHeader />
         </div>
@@ -34,17 +36,6 @@ const Article = () =>
             <div className="Article-sidebar">Sidebar</div>
         </div>
     </div>)
-
-const mapStateToProps = (state, ownProps) => {
-    const { id } = ownProps.match.params;
-    return {
-        article: state.article.items.filter(e => e.id === id)
-    };
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-    };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Article)
+export default Article
