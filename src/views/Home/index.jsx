@@ -4,25 +4,26 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Banner, StartBar, CardContainer } from '../../components';
 import { ColumnCard, PostCard } from '../../components/CardContainer';
 import { categoryActions } from '../../store/category';
+import { articleActions } from '../../store/article';
 import './style.css';
 
+const useLatest = (pageIndex, pageSize) => {
+    const dispatch = useDispatch()
+    const latest = useSelector(state => state.article.latest)
+    useEffect(() => dispatch(articleActions.fetchLatest({ pageIndex, pageSize })), [dispatch])
+    return latest
+}
 
 const HomePage = () => {
-    const dispatch = useDispatch()
-    const columns = useSelector(state => state.category.recommend)
-    const posts = useSelector(state => state.article.latest)
-
-    useEffect(() => {
-        dispatch(categoryActions.fetchRecommendCategory())
-    }, [dispatch])
+    const latest = useLatest(1, 20)
 
     return (<Fragment>
         <Banner />
         <div className="Home">
-            <StartBar text={"分类 · 推荐"} />
-            <CardContainer card={ColumnCard} items={columns} />
+            {/* <StartBar text={"分类 · 推荐"} />
+            <CardContainer card={ColumnCard} items={columns} /> */}
             <StartBar text={"文章 · 最新"} />
-            <CardContainer card={PostCard} items={posts} />
+            <CardContainer card={PostCard} items={latest.data} />
         </div>
     </Fragment >)
 }
