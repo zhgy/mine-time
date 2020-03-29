@@ -1,11 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
 import './style.css';
-import { Author, Button } from '../Button';
+import { Author, Button, CardListView } from '../';
 
 const ArticleItem = ({ article: { id, title, createdOn, excerpt, author } }) => {
-    return (<li className="ArticleItem">
+    return (<>
         <a className="ArticleItem-title" href={`/article/${id}`} target="_blank" rel="noopener noreferrer">
             <h3>{title}</h3>
         </a>
@@ -33,16 +31,18 @@ const ArticleItem = ({ article: { id, title, createdOn, excerpt, author } }) => 
             <button>Vote</button>
             <button>Comment</button>
         </div>
-    </li >)
+    </>)
 }
 
 export const ArticleList = ({ items = [], navButtons = [] }) =>
     (<section className="ArticleList">
         <nav className="ArticleList-nav">
-            {navButtons.map((value, index) => <Button key={index} className='tl-btn-nav' href={value.to}>{value.title}</Button>)}
+            {navButtons.map((value, index) => <Button key={index} className='tl-btn-nav' href={value.to} {...value}>{value.title}</Button>)}
         </nav>
-        <ul className="ArticleList-items">
-            {items.map((value, index) => <ArticleItem key={index} article={value} />)}
-
-        </ul>
+        <div>
+            {<CardListView
+                items={items}
+                onRenderCard={(item)=><ArticleItem article={item} />}
+            />}
+        </div>
     </section >)

@@ -1,0 +1,123 @@
+.tl-cardGridView{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tl-cardListView{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ColumnCard{
+    margin: 0 8px 16px;
+    text-decoration: none;
+    align-items: center;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 8px 18px rgba(0,0,0,.06);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 26px 0 23px;
+    width: 244px;
+}
+
+.ColumnCard figure{
+    margin: 0px;
+    min-height: 172px;
+    max-height: 210px;
+    margin-bottom: 0px;
+    overflow: hidden;
+    width: 244px;
+}
+
+.ColumnCard figure img{
+    margin: 0px;
+    min-height: 172px;
+    max-height: 172px;
+    width: 244px;
+    vertical-align: middle;
+    border-style: none;
+}
+
+.ColumnCard-info{
+    color: black;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 0 16px;
+    margin-top: 8px;
+}
+
+.ColumnCard-meta{
+    color: grey;
+    font-size: 14px;
+    margin-top: 14px;
+}
+
+.Avatar{
+    background: #fff;
+    border-radius: 2px;
+    border-radius: 50%;
+}
+
+.tl-cardify{
+    margin: 0 8px 16px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 8px 18px rgba(0,0,0,.06);
+    box-sizing: border-box;
+    width: 244px;
+}
+
+.tl-cardify-cover{
+
+}
+.tl-cardify-cover img{
+    margin: 0px;
+    min-height: 172px;
+    max-height: 172px;
+    width: 244px;
+    vertical-align: middle;
+    border-style: none;
+}
+
+.tl-cardify-content{
+    padding: 16px 20px 20px;
+}
+
+
+.PostCard-date-category-wrapper{
+    line-height: 26px;
+    margin: 0;
+}
+
+.PostCard-date{
+    color: #444;
+    display: inline-block;
+    font-size: 10px;
+    margin-right: 5px;
+    text-transform: uppercase;
+}
+
+.PostCard-title a{
+    overflow: hidden;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: "Open Sans";
+    font-weight: 600;
+    color: black;
+    display: block;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 5px 0;
+    position: relative;
+}
+
+.PostCard p{
+    font-size: 12px;
+    line-height: 22px;
+    margin-bottom: 0;
+}

@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 
-const RichText = ({ content }) =>
-    (<p dangerouslySetInnerHTML={{ __html: content }} />)
+export const RichText = ({ content }) => {
+    const htmlRef = useRef();
+    useEffect(() => {
+        if (htmlRef.current) {
+            htmlRef.current.innerHTML = content;
+        }
+    },[content]);
+    
 
-export { RichText };
+    return (<div ref={htmlRef}>Loading</div>);
+}

@@ -7,7 +7,7 @@ import {
 
 
 
-const Gallery = props => {
+export const Gallery = props => {
     const profileCardData = {
         tag: 'Top Artist',
         name: 'James Blunt',
@@ -35,5 +35,3 @@ const Gallery = props => {
         </React.Fragment>
     )
 }
-
-export default Gallery

@@ -7,9 +7,8 @@ import { Button, Label } from '../'
 const ProfileCard = ({ tag, name, description, avatar, action }) =>
     (<div className='tl-profile'>
         <div className='tl-profile-bg'>
-
             <figure>
-                <img className='media-object' src={avatar} alt={name} />
+                {avatar ? <img className='media-object' src={avatar} alt={name} /> : null}
             </figure>
             <div className='tl-profile-details'>
                 <div className='tl-profile-tag'>

@@ -1,10 +1,8 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
 
-import { RichText } from '../../components';
-import { Category, Author } from '../../components/Button';
+import { RichText, Category, Author } from '../../components';
+import { useQuery } from '../../core/useFetch';
 import './style.css';
-import { articleActions } from '../../store/article';
 
 const ArticleHeader = ({ createdOn, category, title, author }) =>
     (<div className="ArticleHeader container">
@@ -25,14 +23,13 @@ const ArticleHeader = ({ createdOn, category, title, author }) =>
 
     </div>)
 
-const Article = (props) => {
+export const Article = (props) => {
     const { id } = props.match.params;
-    const dispatch = useDispatch()
-    const article = useSelector(state => state.article.articleDetails)
-    useEffect(() => dispatch(articleActions.findArticle(id)), [id, dispatch])
+    const [data] = useQuery(`/api/posts/${id}`);
+    const article = data.data;
     return (article ? <div className="Article">
         <div className="Article-header">
-            <ArticleHeader {...article} />
+            <ArticleHeader {...article.data} />
         </div>
         <div className="Article-body container" >
             <div className="Article-content"><RichText content={article.content} /></div>
@@ -40,5 +37,3 @@ const Article = (props) => {
         </div>
     </div> : <p>Loading</p>)
 }
-
-export default Article
