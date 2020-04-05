@@ -20,7 +20,7 @@ const ArticleItem = ({ article: { id, title, createdOn, excerpt, author } }) => 
         </div>
         <div className="ArticleItem-excerpt">
             <div className="ArticleItem-cover">
-                <img src="" alt="cover" />
+                <img src='/static/img/default-cover.png' alt="cover" />
             </div>
             <p className="ArticleItem-inner">
                 {excerpt}

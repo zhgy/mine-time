@@ -5,6 +5,7 @@
   "proxy": "http://127.0.0.1:5000",
   "dependencies": {
     "axios": "^0.19.2",
+    "dequal": "^1.0.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-redux": "^7.1.3",

@@ -1,5 +1,5 @@
 .tl-profile{
-    min-height: 340px;
+
 }
 .tl-profile-bg{
     position: relative;
@@ -8,6 +8,7 @@
     background-color: rgba(30, 50, 100, 0.3);
 }
 .tl-profile-details{
+    z-index: 11;
     width: 100%;        
 }
 .tl-profile-tag{
@@ -49,8 +50,8 @@
 }
 @media(min-width:768px){
     .tl-profile{
-        height: 340px;
-        min-height: 340px;
+        /* height: 340px; */
+        /* min-height: 340px; */
     }
     .tl-profile-bg{
         position: relative;

@@ -4,8 +4,12 @@ import { Button, Label } from '../'
 
 
 /* Copied from https://www.spotify.com/ */
-const ProfileCard = ({ tag, name, description, avatar, action }) =>
-    (<div className='tl-profile'>
+export const ProfileCard = ({ tag, name, description, cover, avatar, action }) => { 
+    const bgStyle = {
+        background: `url(${cover}) center no-repeat`,
+        backgroundSize: 'cover',
+    };
+    return (<div className='tl-profile' style={bgStyle}>
         <div className='tl-profile-bg'>
             <figure>
                 {avatar ? <img className='media-object' src={avatar} alt={name} /> : null}
@@ -25,22 +29,5 @@ const ProfileCard = ({ tag, name, description, avatar, action }) =>
                 </div>
             </div>
         </div>
-    </div>)
-// (<div className='ProfileCard-container'>
-//     <div id="profile-artist" className=''>
-//         <figure className='item-art'>
-//             <img className='media-object' src={avatar} alt={name} />
-//         </figure>
-//         <figcaption className='item-details'>
-//             <Label className='item-details-tag'>{tag}</Label>
-//             <Label className='item-details-name'>{name}</Label>
-//             <div style={{ padding: '10px 42px' }}>
-//                 {action ? <Button {...action} /> : null}
-//                 {description ? <p className='item-details-desc'>{description}</p> : null}
-//             </div>
-//         </figcaption>
-//         <div className='item-bg'></div>
-//     </div>
-// </div>)
-
-export { ProfileCard }
+    </div>);
+};

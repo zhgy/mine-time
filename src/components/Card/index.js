@@ -57,9 +57,9 @@ export const Cover = (props) => {
 
 export const Cardify = ({ cover, coverProps, children }) => 
     <div className="tl-cardify">
-        <dvi className="tl-cardify-cover">
+        <div className="tl-cardify-cover">
             <Cover cover={cover} {...coverProps} />
-        </dvi>
+        </div>
         <div className="tl-cardify-content">
             {children}
         </div>
