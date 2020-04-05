@@ -1,65 +1,62 @@
-import { useEffect, useState, useReducer } from "react"
-import axios from 'axios'
+import { useEffect, useReducer, useRef } from "react"
+import deepEqual from 'dequal'
 
 
+const INIT = 'INIT';
+const RUNNING = 'RUNNING';
+const DONE = 'DONE';
+const ERROR = 'ERROR';
 
-const dataFetchReducer = (state, action) => {
+const dataFetchReducer = (prevState, action) => {
+    let nextState = prevState;
     switch (action.type) {
         case 'FETCH_START':
-            return {
-                ...state,
-                isLoading: true,
-                isError: false
-            }
+            nextState = { ...prevState, status: RUNNING };
+            break;
         case 'FETCH_SUCCESS':
-            return {
-                ...state,
-                isLoading: false,
-                isError: false,
-                data: action.payload
-            }
+            nextState = { ...prevState, status: DONE, data: action.payload };
+            break;
         case 'FETCH_FAILURE':
-            return {
-                ...state,
-                isLoading: false,
-                isError: true
-            }
-
+            nextState = { ...prevState, status: ERROR, data: action.payload };
+            break;
         default:
-            throw new Error()
+            nextState = prevState;
+            break;
     }
+    if (process.env.NODE_ENV === 'development') {
+        console.info('Prev :%o\nAction :%o\nNext :%o', prevState, action, nextState);
+    }
+
+    return nextState;
 }
 
-function useFetch(initialRequest, initialData) {
-
-    // See https://www.robinwieruch.de/react-hooks-fetch-data
-    const [request, setRequest] = useState(initialRequest)
-    const doFetch = (request) => {
-        setRequest(request)
+// https://github.com/kentcdodds/use-deep-compare-effect
+function useDeepCompareMemoize(value) {
+    const ref = useRef();
+    if (!deepEqual(value, ref.current)) {
+        ref.current = value;
     }
+    return ref.current;
+}
+export function useFetch(initialData, api, ...args) {
 
     const [state, dispatch] = useReducer(dataFetchReducer, {
-        isLoading: false,
-        isError: false,
+        status: INIT,
         data: initialData
     })
 
     useEffect(() => {
-        if (request.method === 'POST' && !request.data)
-            return
-
         let didCancel = false
         const fetchData = async () => {
-            dispatch({ type: 'FETCH_START' })
+            dispatch({ type: 'FETCH_START', args })
             try {
-                console.log(request);
-                const response = await axios.request(request)
+                const response = await api(...args);
                 if (!didCancel) {
                     dispatch({ type: 'FETCH_SUCCESS', payload: response.data })
                 }
             } catch (error) {
                 if (!didCancel) {
-                    dispatch({ type: 'FETCH_FAILURE' })
+                    dispatch({ type: 'FETCH_FAILURE', payload: error.response })
                 }
             }
 
@@ -67,32 +64,8 @@ function useFetch(initialRequest, initialData) {
 
         fetchData()
         return () => { didCancel = true }
-    }, [request])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, useDeepCompareMemoize([api, args]));
 
-    console.log(state)
-    return [state, doFetch]
+    return state;
 }
-
-function useQuery(url, initialData) {
-    const [state, doFetch] = useFetch({ method: 'GET', url }, initialData)
-    return [state, (query) => doFetch({method: 'GET', url: query})];
-}
-
-function usePost(initialData) {
-    const [state, doFetch] = useFetch({ method: 'POST' }, initialData)
-    return [state, (url, data) => doFetch({ method: 'POST', url, data })]
-}
-
-function usePut(initialData) {
-    const [state, doFetch] = useFetch({ method: 'PUT' }, initialData)
-    return [state, (url, data) => doFetch({ method: 'PUT', url, data })]
-}
-
-
-export {
-    useFetch,
-    useQuery,
-    usePost,
-    usePut
-}
-export default useFetch

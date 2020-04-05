@@ -1,7 +1,8 @@
 import React from 'react';
 
 import { RichText, Category, Author } from '../../components';
-import { useQuery } from '../../core/useFetch';
+import { useSingleArticle } from '../../api/PostAPI';
+import { useParams } from 'react-router-dom';
 import './style.css';
 
 const ArticleHeader = ({ createdOn, category, title, author }) =>
@@ -24,12 +25,11 @@ const ArticleHeader = ({ createdOn, category, title, author }) =>
     </div>)
 
 export const Article = (props) => {
-    const { id } = props.match.params;
-    const [data] = useQuery(`/api/posts/${id}`);
-    const article = data.data;
-    return (article ? <div className="Article">
+    const { id } = useParams();
+    const {status, data: article} = useSingleArticle(id);
+    return (status === 'DONE' ? <div className="Article">
         <div className="Article-header">
-            <ArticleHeader {...article.data} />
+            <ArticleHeader {...article} />
         </div>
         <div className="Article-body container" >
             <div className="Article-content"><RichText content={article.content} /></div>
